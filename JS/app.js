@@ -25,6 +25,7 @@ async function app() {
 
     document.querySelector('#showed-pokemon').innerHTML = template;
   }
+
   indexList();
   async function buttonBack() {
     console.log('Index = ' + index);

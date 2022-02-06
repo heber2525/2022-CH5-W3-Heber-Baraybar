@@ -14,5 +14,18 @@ async function getNameOfPokemon() {
   console.log(detailOfPokemon);
   let sprite = detailOfPokemon.sprites.front_shiny;
   console.log(sprite);
+
+  async function showingDetailsPokemon(data) {
+    let template = '';
+    let sprite = detailOfPokemon.sprites.front_shiny;
+    let name = nameOfPokemon;
+    template += `
+       <li><img src="${sprite}" /></li>
+        <li>${name}</li>
+       
+      `;
+    document.querySelector('#details-pokemon').innerHTML = template;
+  }
+  showingDetailsPokemon(detailOfPokemon);
 }
 document.addEventListener('DOMContentLoaded', getNameOfPokemon);
