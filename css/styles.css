@@ -7,6 +7,41 @@ body {
   background-color: yellow;
 }
 .header-h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blanchedalmond;
+  height: 200px;
+}
+#details-pokemon {
+  height: 200px;
+  width: 200px;
+  margin: 100px auto;
   text-align: center;
+  border-radius: 10px;
+  border-style: double;
   background-color: burlywood;
+}
+#details-pokemon:hover {
+  box-shadow: 10px 10px 10px black;
+  transition: 1s;
+}
+#pokemon-list {
+  display: flex;
+  flex-direction: row;
+}
+li {
+  text-transform: capitalize;
+}
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around ;
+}
+.pokemon-list li a {
+  padding: 20px;
+  background-color: grey;
+  text-decoration: none;
+  margin: 5px;
+  border-radius: 5px;
 }
