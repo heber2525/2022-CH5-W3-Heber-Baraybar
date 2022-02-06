@@ -19,13 +19,43 @@ async function getNameOfPokemon() {
     let template = '';
     let sprite = detailOfPokemon.sprites.front_shiny;
     let name = nameOfPokemon;
+    let types = detailOfPokemon.types;
     template += `
        <li><img src="${sprite}" /></li>
         <li>${name}</li>
-       
+        
       `;
+    types.forEach((item) => {
+      template += `<li>${item.type.name}</li>`;
+    });
+
     document.querySelector('#details-pokemon').innerHTML = template;
   }
   showingDetailsPokemon(detailOfPokemon);
+  const favorite = {
+    name: nameOfPokemon,
+    img: detailOfPokemon.sprites.front_shiny,
+  };
+  const sendDataToJson = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(favorite),
+  };
+
+  function updateJson() {
+    let postData = fetch('http://localhost:3000/Pokemon', sendDataToJson)
+      .then((data) => {
+        return data.json();
+      })
+      .then((favorite) => {
+        console.log(favorite);
+      });
+  }
+
+  document
+    .querySelector('.button-favourite-pokemon')
+    .addEventListener('click', updateJson);
 }
 document.addEventListener('DOMContentLoaded', getNameOfPokemon);

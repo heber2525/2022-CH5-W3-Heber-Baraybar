@@ -1,19 +1,9 @@
 {
-  "posts": [
+  "Pokemon": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "charmeleon",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/5.png",
+      "id": 1
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
